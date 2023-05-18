@@ -133,7 +133,7 @@ const requestNotificationAsync = async (notificationRequest: NotificationRequest
                     })
                 )
                 break;
-             case 'android':
+            case 'android':
                 messageBody = {
                     "notification": {
                         "title": notificationRequest.title,
