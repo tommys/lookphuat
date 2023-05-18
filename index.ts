@@ -133,19 +133,19 @@ const requestNotificationAsync = async (notificationRequest: NotificationRequest
                     })
                 )
                 break;
-            case 'android':
+             case 'android':
+                messageBody = {
+                    "notification": {
+                        "title": notificationRequest.title,
+                        "body": notificationRequest.message
+                    }
+                }
+                notifications.push(
+                    createFcmLegacyNotification({
+                        body: JSON.stringify(messageBody),
+                    })
+                )
                 break;
-                // messageBody = {
-                //     "notification": {
-                //         "title": notificationRequest.title,
-                //         "body": notificationRequest.message
-                //     }
-                // }
-                // notifications.push(
-                //     createFcmLegacyNotification({
-                //         body: JSON.stringify(messageBody),
-                //     })
-                // )
             default:
                 break;
         }
