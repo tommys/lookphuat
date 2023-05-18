@@ -15,11 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const notification_hubs_1 = require("@azure/notification-hubs");
 const app = (0, express_1.default)();
-const port = 3000;
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use(express_1.default.json());
+const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
-    res.sendFile('index.html', { root: '.' });
+    res.send('hello');
+    // res.sendFile('index.html', { root: '.' });
     // res.send(`
     // <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     // <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
